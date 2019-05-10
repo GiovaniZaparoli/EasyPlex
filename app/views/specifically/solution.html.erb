@@ -1,0 +1,72 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="panel panel-primary">
+    <div class="h2 mb-5">Resolução</div>
+    <div class="panel-body">
+        <div class="col-md-12">
+          <table class="table table table-striped">
+            <thead class="thead-dark">
+              <th>Variaveis</th>
+              <th>Final</th>
+              <th>PS</th>
+              <th class="text-center">+</th>
+              <th class="text-center">-</th>
+              <th>Uso</th>
+            </thead>
+            <tbody>
+              <% for i in 0..@number_variables-1 %>
+                <tr>
+                  <th>x<%=i+1%></th>
+                  <th><%= @solution_end[i] %></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              <%end%>
+              <% for i in 0..@number_restriction-1 %>
+                <tr>
+                  <th>f<%=i+1%></th>
+                  <th><%= @variables_reserves_end[i] %></th>
+                  <th><%= @variables_reserves_end[i] %></th>
+                  <%if @max_min[i].length == 0 %>
+                    <th class="text-center">0</th>
+                    <th class="text-center">0</th>
+                  <%else%>
+                    <% for j in 0..@max_min[i].length-1 %>
+                      <%if @max_min[i].length < 2 %>
+                        <% if @max_min[i][0].to_f >= 0 %>
+                          <th class="text-center"><%=@max_min[i][0].to_f%></th>
+                        <%else%>
+                          <th class="text-center">0</th>
+                        <%end%>
+                        <% if @max_min[i][0].to_f <= 0 %>
+                          <th class="text-center"><%=@max_min[i][0].to_f * (-1) %></th>
+                        <%else%>
+                          <th class="text-center">0</th>
+                        <%end%>
+                      <%else%>
+                        <% if @max_min[i][j].to_f >= 0 %>
+                          <th class="text-center"><%=@max_min[i][j].to_f%></th>
+                        <%end%>
+                        <% if @max_min[i][j].to_f <= 0 %>
+                          <th class="text-center"><%=@max_min[i][j].to_f * (-1) %></th>
+                        <%end%>
+                        <%end%>
+                      <%end%>
+                    <%end%>
+                  <th><%= @function_limits[i] - @variables_reserves_end[i] %></th>
+                </tr>
+              <%end%>
+              <tr>
+                <th>Z</th>
+                <th><%= @valueZ_end %></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>

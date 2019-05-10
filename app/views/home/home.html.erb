@@ -1,0 +1,45 @@
+
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <form action="/specifically/new">
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Quantidade de Iterações</label>
+            <div class="form-group">
+              <input type="number" id="interaction_limit" value="10000" min="0" name="interaction_limit" class="form-control" id="exampleFormControlSelect1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Quantidade de variaveis</label>
+            <div class="form-group">
+              <input type="number" id="number_variables" min="0" name="number_variables" class="form-control" id="exampleFormControlSelect1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Quantas restrições?</label>
+            <div class="form-group">
+              <input type="number" id="number_restrictions" min="0" name="number_restrictions" class="form-control" id="exampleFormControlSelect1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Maximizar ou Minimizar?</label>
+            <div class="form-group">
+              <select id="max_or_min" name="max_or_min" class="form-control" id="exampleFormControlSelect1">
+                <option value="1">Maximizar</option>
+                <option disabled value="2">Minimizar(Em Breve)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-rounded btn-block">Continuar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+

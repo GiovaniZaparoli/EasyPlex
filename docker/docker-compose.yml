@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    tty: true
+    stdin_open: true
+    build: ./
+    container_name: simplex-master
+    privileged: true
+    volumes:
+      - ../:/var/www/simplex-master
+    ports:
+      - "3000:3000"
+      - "80:80"

@@ -1,0 +1,97 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12">
+      <form action="/specifically/create" id="formSpecifically" method="POST">
+        <div class="panel panel-primary">
+          <div class="h3 mb-3">Função:</div>
+          <div class="panel-body">
+            <div class="form-row">
+              <% for @i in 1..@number_variables %>
+              <div class="form-group col-md-4 d-flex flex-wrap">
+                <div class="col-md-12">
+                  <label class="control-label">X<%= @i %></label>
+                </div>
+                <div class="col-md-10">
+                  <input type="number" step="0.01" class="form-control" name="input_x<%= @i %>" id="input_x<%= @i %>" required>
+                </div>
+
+                <div class="col-md-2">
+                  <% if(@i < @number_variables) %>
+                      <h4>+</h4>
+                  <% end %>
+                </div>
+              </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="h3 mb-3 mt-3">Restrições:</div>
+          <div class="panel-body">
+              <% for @j in 1..@number_restriction %>
+              <div class="form-group">
+                <div class="col-md-12 d-flex flex-wrap">
+                  <% for @i in 1..@number_variables+1 %>
+                    <div class="form-row">
+                    <% if (@i <= @number_variables) %>
+
+                        <div class="form-group col-md-12 d-flex flex-wrap">
+                          <div class="col-md-12">
+                            <label class="control-label">X<%= @i %></label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="number" step="0.01" name="restriction_x<%= @i %>_<%= @j %>" class="form-control" id="restriction_x<%= @i %>_<%= @j %>" required>
+                          </div>
+                          <% if (@i < @number_variables) %>
+                          <div class="col-md-1">
+                            <h4>+</h4>
+                          </div>
+                          <% else %>
+                            <div class="col-md-3">
+                              <select id="max_or_min" name="max_or_min" class="form-control" id="exampleFormControlSelect1">
+                                <option value="1"><=</option>
+                              </select>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                    <% end %>
+                      <% if (@i == @number_variables + 1) %>
+                      <div class="form-group col-md-12">
+                        <div class="col-md-12">
+                          <label class="control-label">Restrição</label>
+                        </div>
+                        <div class="col-md-8">
+                          <input type="number" step="0.01" class="form-control" name="limite_x<%= @j %>" id="limite_x<%= @j %>" required>
+                        </div>
+                      </div>
+                      <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <input type="hidden" class="form-control" value="1" name="restriction_f<%= @i %>_<%= @j %>" id="restriction_f<%= @j %>">
+              <input type="hidden" class="form-control" value="<%= @number_variables %>" name="number_variables" id="number_variables">
+              <input type="hidden" class="form-control" value="<%= @number_restriction %>" name="number_restrictions" id="number_restrictions">
+              <input type="hidden" class="form-control" value="<%= @max_or_min %>" name="max_or_min" id="max_or_min">
+              <input type="hidden" class="form-control" name="interaction_limit" id="interaction_limit" value="<%= @interaction_limit %>">
+
+          <% end %>
+            <input type="hidden" class="form-control"  name="option_user" id="option_user">
+          </div>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <input type="submit" onclick="directSolution()" class="btn btn-primary" value="Resposta">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+    function directSolution() {
+        $("#option_user").val(1);
+    }
+
+    function stepInStep() {
+        $("#option_user").val(2);
+    }
+</script>
