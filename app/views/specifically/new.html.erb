@@ -1,21 +1,21 @@
-<div class="col-md-10 col-md-offset-1">
+ <div class="col-md-10 col-md-offset-1">
   <div class="row d-flex justify-content-center">
     <div class="col-md-12">
       <form action="/specifically/create" id="formSpecifically" method="POST">
         <div class="panel panel-primary">
           <div class="h3 mb-3">Função:</div>
           <div class="panel-body">
-            <div class="form-row">
+            <div class="form-row d-flex justify-content-center">
               <% for @i in 1..@number_variables %>
-              <div class="form-group col-md-4 d-flex flex-wrap">
-                <div class="col-md-12">
+              <div class="form-group col-md-2 d-flex flex-wrap no-padding">
+                <div class="col-md-12 no-padding">
                   <label class="control-label">X<%= @i %></label>
                 </div>
-                <div class="col-md-10">
-                  <input type="number" step="0.01" class="form-control" name="input_x<%= @i %>" id="input_x<%= @i %>" required>
+                <div class="col-md-10 no-padding">
+                  <input type="number" step="0.01" class="border-color form-control" name="input_x<%= @i %>" id="input_x<%= @i %>" required>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-2 no-padding d-flex justify-content-center">
                   <% if(@i < @number_variables) %>
                       <h4>+</h4>
                   <% end %>
@@ -32,23 +32,23 @@
               <div class="form-group">
                 <div class="col-md-12 d-flex flex-wrap">
                   <% for @i in 1..@number_variables+1 %>
-                    <div class="form-row">
+                    <div class="col-md-2 no-padding no-margin">
                     <% if (@i <= @number_variables) %>
 
-                        <div class="form-group col-md-12 d-flex flex-wrap">
-                          <div class="col-md-12">
+                        <div class="col-md-12 d-flex flex-wrap no-margin no-padding mr-0">
+                          <div class="col-md-8 no-padding">
                             <label class="control-label">X<%= @i %></label>
                           </div>
-                          <div class="col-md-8">
-                            <input type="number" step="0.01" name="restriction_x<%= @i %>_<%= @j %>" class="form-control" id="restriction_x<%= @i %>_<%= @j %>" required>
+                          <div class="col-md-6 no-padding">
+                            <input type="number" step="0.01" name="restriction_x<%= @i %>_<%= @j %>" class="border-color form-control" id="restriction_x<%= @i %>_<%= @j %>" required>
                           </div>
                           <% if (@i < @number_variables) %>
-                          <div class="col-md-1">
+                          <div class="col-md-6 d-flex justify-content-center">
                             <h4>+</h4>
                           </div>
                           <% else %>
-                            <div class="col-md-3">
-                              <select id="max_or_min" name="max_or_min" class="form-control" id="exampleFormControlSelect1">
+                            <div class="col-md-5 ml-2 no-padding">
+                              <select id="max_or_min" name="max_or_min" class="form-control border-color" id="exampleFormControlSelect1">
                                 <option value="1"><=</option>
                               </select>
                             </div>
@@ -61,8 +61,8 @@
                         <div class="col-md-12">
                           <label class="control-label">Restrição</label>
                         </div>
-                        <div class="col-md-8">
-                          <input type="number" step="0.01" class="form-control" name="limite_x<%= @j %>" id="limite_x<%= @j %>" required>
+                        <div class="col-md-10">
+                          <input type="number" step="0.01" class="form-control border-color" name="limite_x<%= @j %>" id="limite_x<%= @j %>" required>
                         </div>
                       </div>
                       <% end %>
@@ -95,3 +95,9 @@
         $("#option_user").val(2);
     }
 </script>
+<style>
+  .border-color {
+    border-right:1px solid #000; !important;
+    border-color: black; !important;
+  }
+</style>
