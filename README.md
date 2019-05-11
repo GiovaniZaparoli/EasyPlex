@@ -1,4 +1,4 @@
-Easy-Plex
+~~~~Easy-Plex
 Repositório para a implementação do algoritmo EasyPlex
 
 Giovani Gasparini Zaparoli R.A.:573450  
