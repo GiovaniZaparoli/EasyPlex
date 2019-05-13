@@ -29,6 +29,19 @@ Compatibilidade
 Requisitos	Ferramentas
 Navegadores	Google Chrome, Mozilla Firefox
 Sistemas Operacionais	Ubuntu, Windows.
+
+Datas Importantes
+
+Datas	Eventos
+20/03/19	Início do Planejamento
+30/03/19	Início da Implementação do Algoritmo
+17/04/19	Entrega do MVP 1
+20/04/19	Implementação dos Requisitos do MVP 2
+29/04/19	Entrega do MVP 2
+01/05/19	Implementação de Requisitos do MVP 3
+13/05/19	Entrega do MVP 3
+
+
 Atividades realizadas no período
 Código	Título	Tarefa	Situação	Observação
 1	Maximizar	Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares.	Concluído	Apenas restrições de “<=”
@@ -61,4 +74,4 @@ As restrições
 1 X1 + 1 X2<= 4 1 X1 + 1 X2<= 6 X1, X2 >=0
 
 Clicar no botão “Solução Direta” para obter o resultado.
-Z= 12
+Z= 0
