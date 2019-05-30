@@ -1,0 +1,94 @@
+<html>
+  
+  <head>
+    <title>Knapsack</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index">
+            <a class="navbar-brand" href="/index">Simplex</a>
+          </a>
+          <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">|</a>
+          </a>
+          <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#"><b>Knapsack</b></a>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Tabela de pesos e valores</div>
+            <table class="table" id="ktable">
+              <th>
+                <tr>
+                  <th>Peso</th>
+                  <th>Valor</th>
+                </tr>
+              </th>
+              <tr>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+              </tr>
+              <tr>
+                <td><button type="button" id="adic" class="btn btn-block btn-primary">Adicionar item</button></td>
+                <td><button type="button" id="rm" class="btn btn-block btn-danger">Remover item</button></td>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Capacidade da mochila
+            </div>
+            <div class="panel-body">
+              <input type="text" id="capacity" class="form-control" />
+              <br>
+              <button type="button" id="calc" class="btn btn-block btn-success">Calcular</button>
+            </div>
+          </div>
+        </div>
+
+   
+      </div>
+
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Resultado
+        </div>
+        <div class="panel-body">
+          <div id="result">
+            <div class="alert alert-info">
+              Preencha o formulário ao lado, defina a capacidade da mochila e calcule.
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

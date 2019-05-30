@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: "home#home"
+  root 'knapsack#table'
+
+  get '/calc', to: 'knapsack#calc'
 
   #specifically
   get "specifically/new", to: "specifically#new"
