@@ -29,6 +29,6 @@ RUN sudo apt-get install imagemagick -y
 RUN export RBENV_ROOT="${HOME}/.rbenv"
 RUN export PATH="${RBENV_ROOT}/bin:${PATH}"
 RUN sudo echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-RUN /home/docker/.rbenv/shims/gem install bundler -v '~>1.3.0'
+RUN /home/docker/.rbenv/shims/gem install bundler -v '~>1.7.7'
 WORKDIR /var/www/simplex-master
 RUN sudo /usr/bin/supervisord
