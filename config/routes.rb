@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'knapsack#table'
+  #root 'knapsack#table'
+  root to: "home#home"
 
   get '/calc', to: 'knapsack#calc'
-
+  get 'knapsack/new', to: 'knapsack#table'
   #specifically
   get "specifically/new", to: "specifically#new"
 

@@ -85,7 +85,7 @@ class Simplex
     puts "===================="
     puts pivot_column
     puts "===================="
-    raise UnboundedProblem unless pivot_row
+    redirect_to UnboundedProblem unless pivot_row
     leaving_var  = basic_variable_in_row(pivot_row)
     replace_basic_variable(leaving_var => pivot_column)
 
